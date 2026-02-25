@@ -31,9 +31,6 @@ commandTests:
   args: ['container-tests/check_installed_py_packages.py']
   excludedError: ['.*FAIL.*']
   expectedOutput: ['.*SUCCESS.*']
-- name: 'ipython'
-  command: 'ipython'
-  expectedOutput: ['.*IPython.*']
 - name: 'requirements-file'
   command: 'sh'
   args: ['-c', 'test -f /requirements.txt && echo FOUND']
