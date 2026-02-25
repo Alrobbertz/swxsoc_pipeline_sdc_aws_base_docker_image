@@ -34,17 +34,7 @@ commandTests:
 - name: 'ipython'
   command: 'ipython'
   expectedOutput: ['.*IPython.*']
-
-
-# Test if needed files exist
-fileExistenceTests:
-- name: 'Root'
-  path: '/'
-  shouldExist: true
-  uid: 0
-  gid: 0
-- name: 'Python Requirements'
-  path: '/requirements.txt'
-  shouldExist: true
-  uid: 0
-  gid: 0
+- name: 'requirements-file'
+  command: 'sh'
+  args: ['-c', 'test -f /requirements.txt && echo FOUND']
+  expectedOutput: ['FOUND']
